@@ -1,0 +1,68 @@
+{
+  "annotations": {
+    "changelogDate": "20250510194838"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "cpf",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required", "unique"],
+      "fieldValidateRulesMaxlength": "11"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "telefone",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "13"
+    },
+    {
+      "fieldName": "cargo",
+      "fieldType": "Cargo",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "GERENTE,VENDEDOR,ESTAGIARIO"
+    },
+    {
+      "fieldName": "dataAdmissao",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dataDesligamento",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "salario",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Funcionario",
+  "relationships": [
+    {
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "funcionario",
+      "relationshipName": "usuario",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

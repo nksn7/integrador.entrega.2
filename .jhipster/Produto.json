@@ -1,0 +1,63 @@
+{
+  "annotations": {
+    "changelogDate": "20250510194840"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    },
+    {
+      "fieldName": "codigoBarras",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "categoria",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    },
+    {
+      "fieldName": "custoAquisicao",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precoVenda",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "quantidadeEstoque",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "estoqueMinimo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "unidadeMedida",
+      "fieldType": "UnidadeMedida",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "UNIDADE,KG,L"
+    },
+    {
+      "fieldName": "dataCadastro",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Produto",
+  "relationships": [],
+  "searchEngine": "no"
+}

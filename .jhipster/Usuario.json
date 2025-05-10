@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20250510194839"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "login",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required", "unique"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "senhaHash",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ultimoAcesso",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Usuario",
+  "relationships": [
+    {
+      "otherEntityName": "funcionario",
+      "otherEntityRelationshipName": "usuario",
+      "relationshipName": "funcionario",
+      "relationshipSide": "right",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,67 @@
+{
+  "annotations": {
+    "changelogDate": "20250510194842"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "dataVenda",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "valorTotal",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descontoTotal",
+      "fieldType": "Float",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "formaPagamento",
+      "fieldType": "FormaPagamento",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "DEBITO,CREDITO,PIX,DINHEIRO_FISICO"
+    },
+    {
+      "fieldName": "parcelas",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "notaFiscalEmitida",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "estatus",
+      "fieldType": "EstatusVenda",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "EM_ABERTO,PAGO,FINALIZADA,CANCELADA"
+    },
+    {
+      "fieldName": "observacoes",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "500"
+    }
+  ],
+  "name": "Venda",
+  "relationships": [
+    {
+      "otherEntityName": "cliente",
+      "relationshipName": "cliente",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "funcionario",
+      "relationshipName": "funcionario",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

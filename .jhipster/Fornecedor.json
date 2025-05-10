@@ -1,0 +1,70 @@
+{
+  "annotations": {
+    "changelogDate": "20250510194841"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "razaoSocial",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "cpf",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "11"
+    },
+    {
+      "fieldName": "cnpj",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "14"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "telefone",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "13"
+    },
+    {
+      "fieldName": "condicaoPagamento",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "ativo",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "dataCadastro",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "Fornecedor",
+  "relationships": [
+    {
+      "otherEntityName": "endereco",
+      "otherEntityRelationshipName": "fornecedor",
+      "relationshipName": "enderecos",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

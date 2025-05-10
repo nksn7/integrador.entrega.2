@@ -50,6 +50,15 @@ public class CacheConfiguration {
             createCache(cm, br.com.unifacisa.projetointegrador.domain.User.class.getName());
             createCache(cm, br.com.unifacisa.projetointegrador.domain.Authority.class.getName());
             createCache(cm, br.com.unifacisa.projetointegrador.domain.User.class.getName() + ".authorities");
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Cliente.class.getName());
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Cliente.class.getName() + ".enderecos");
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Endereco.class.getName());
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Funcionario.class.getName());
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Usuario.class.getName());
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Produto.class.getName());
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Fornecedor.class.getName());
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Fornecedor.class.getName() + ".enderecos");
+            createCache(cm, br.com.unifacisa.projetointegrador.domain.Venda.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
