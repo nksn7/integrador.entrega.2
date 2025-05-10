@@ -1,0 +1,120 @@
+entity Cliente {
+    tipoPessoa TipoPessoa
+    nome String maxlength(100)
+    razaoSocial String maxlength(100)
+    cpf String maxlength(11) unique
+    cnpj String maxlength(14) unique
+    email String maxlength(100) required
+    telefone String maxlength(13)
+    dataCadastro Instant required
+    ativo Boolean required
+}
+
+entity Endereco {
+    rua String required maxlength(100)
+    cidade String required maxlength(50)
+    estado String required maxlength(50)
+    codigoPostal String required maxlength(20)
+}
+
+
+entity Funcionario {
+    nome String maxlength(100)
+    cpf String maxlength(11) required unique
+    email String maxlength(100) required
+    telefone String maxlength(13) required
+    cargo Cargo required
+    dataAdmissao LocalDate required
+    dataDesligamento LocalDate
+    salario Float required
+    ativo Boolean required
+}
+
+
+entity Usuario {
+    login String maxlength(100) required unique
+    senhaHash String required
+    ativo Boolean required
+    ultimoAcesso LocalDate
+}
+
+entity Produto {
+    nome String maxlength(100) required
+    descricao String maxlength(500)
+    codigoBarras String required maxlength(50)
+    categoria String maxlength(50)
+    custoAquisicao Float required
+    precoVenda Float required
+    quantidadeEstoque Integer
+    estoqueMinimo Integer
+    unidadeMedida UnidadeMedida required
+    dataCadastro LocalDate
+}
+
+entity Fornecedor {
+    nome String maxlength(100)
+    razaoSocial String maxlength(100)
+    cpf String maxlength(11) unique
+    cnpj String maxlength(14) unique
+    email String maxlength(100) required
+    telefone String maxlength(13) required
+    condicaoPagamento String maxlength(100)
+    ativo Boolean required
+    dataCadastro LocalDate
+}
+
+entity Venda {
+    dataVenda LocalDate required
+    valorTotal Float required
+    descontoTotal Float required
+    formaPagamento FormaPagamento required
+    parcelas Integer required
+    notaFiscalEmitida Boolean required
+    estatus EstatusVenda required
+    observacoes String maxlength(500)
+}
+
+enum TipoPessoa {
+    FISICA,
+    JURIDICA
+}
+
+enum Cargo {
+    GERENTE,
+    VENDEDOR,
+    ESTAGIARIO
+}
+
+enum UnidadeMedida {
+    UNIDADE,
+    KG,
+    L
+}
+
+enum FormaPagamento {
+    DEBITO,
+    CREDITO,
+    PIX,
+    DINHEIRO_FISICO
+}
+
+enum EstatusVenda {
+    EM_ABERTO,
+    PAGO,
+    FINALIZADA,
+    CANCELADA
+}
+
+relationship ManyToOne {
+    Venda{cliente} to Cliente
+    Venda{funcionario} to Funcionario
+}
+
+relationship OneToMany {
+    Cliente{enderecos} to Endereco{cliente}
+    Fornecedor{enderecos} to Endereco{fornecedor}
+}
+
+relationship OneToOne {
+    Funcionario{usuario} to Usuario{funcionario}
+}
