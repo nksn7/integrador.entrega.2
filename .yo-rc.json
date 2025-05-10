@@ -1,0 +1,33 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "projetoIntegrador",
+    "buildTool": "maven",
+    "cacheProvider": "ehcache",
+    "clientFramework": "no",
+    "clientTestFrameworks": null,
+    "clientTheme": null,
+    "creationTimestamp": 1746905837995,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "enableHibernateCache": true,
+    "enableTranslation": false,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "NmE3Yjg3MWQyNzg0MmRlYzZlNDcwYzM3Nzc4NGU5YmIwOGFjZWExMDQ4YjA4NWRmMWViYTM4YTYxMDkwMzZhYTY2MjYyMWEyMzQ1ZWI5MjZkZThhMGM2ZTcwMDIwZTA2ZTQyZmRhNTAwYjJmMTU3MzZiOTEyMjcyY2ZkNTA3MDI=",
+    "microfrontend": null,
+    "microfrontends": [],
+    "nativeLanguage": "pt-br",
+    "packageName": "br.com.unifacisa.projetointegrador",
+    "prodDatabaseType": "mysql",
+    "reactive": false,
+    "serverPort": null,
+    "serviceDiscoveryType": null,
+    "skipClient": true,
+    "syncUserWithIdp": null,
+    "testFrameworks": [],
+    "withAdminUi": null
+  }
+}
